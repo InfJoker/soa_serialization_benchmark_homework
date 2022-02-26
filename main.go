@@ -19,7 +19,7 @@ import (
 
 type TestInstance struct {
 	ID   int            `json:"id" yaml:"id" avro:"ID"`
-	Frac float64        `json:"frac" yaml:"frac" avro:"Frac"`
+	Frac float32        `json:"frac" yaml:"frac" avro:"Frac"`
 	Name string         `json:"name" yaml:"name" avro:"Name"`
 	Maps map[string]int `json:"maps" yaml:"maps" avro:"Maps"`
 }
@@ -173,11 +173,11 @@ func main() {
 	var msg msgpackExperiment
 	run_timed("MSGPACK", msg, t)
 
-	// schemaStr, _ := ioutil.ReadFile("schema.avsc")
-	// schema, _ := avro.Parse(string(schemaStr))
+        schemaStr, _ := ioutil.ReadFile("schema.avsc")
+	schema, _ := avro.Parse(string(schemaStr))
 
-	// avr := avroExperiment{schema: schema}
-	// run_timed("AVRO", avr, t)
+	avr := avroExperiment{schema: schema}
+	run_timed("AVRO", avr, t)
 
 	var prtTest models.Test
 
