@@ -1,0 +1,38 @@
+{
+    "namespace": "one.panim",
+    "type":	"record",
+    "name": "test",
+    "fields": [
+        {
+            "name": "Tests",
+            "type": {
+                "type": "array",
+                "items":{
+                    "name": "TestInstance",
+                    "type": "record",
+                    "fields":[
+                        {   
+                            "name": "ID",
+                            "type": "int"
+                        },
+                        {
+                            "name": "Frac",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Name",
+                            "type": "string"
+                        },
+                        {
+                            "name": "Maps",
+                            "type": {
+                                "type": "map",
+                                "values": "int"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

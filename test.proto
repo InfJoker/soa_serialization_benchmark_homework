@@ -1,0 +1,14 @@
+syntax = "proto3"; // defaults to proto2
+
+option go_package = "serialization/models";
+
+message Test {
+  repeated TestInstance tests = 1;
+
+  message TestInstance {
+    int32 id = 1;
+    float frac = 2;
+    string name = 3;
+    map<string, int32> maps = 4;
+  }
+}
